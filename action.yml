@@ -1,0 +1,19 @@
+name: 'SyCLI Action'
+description: 'Use SyCLI'
+inputs:
+  command:
+    description: 'SyCLI command'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: Install SyCLI
+      shell: bash
+      run: |
+        curl -sSL https://github.com/gudao-co/sy-cli-actions/raw/refs/heads/main/sycli > sycli
+        chmod +x sycli
+
+    - name: SyCLI
+      shell: bash
+      run: sycli ${{ inputs.command }}
+      
