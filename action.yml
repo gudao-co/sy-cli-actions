@@ -15,5 +15,5 @@ runs:
 
     - name: SyCLI
       shell: bash
-      run: sycli ${{ inputs.command }}
+      run: ./sycli ${{ inputs.command }}
       
